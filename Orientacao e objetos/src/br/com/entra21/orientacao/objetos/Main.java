@@ -2,6 +2,8 @@ package br.com.entra21.orientacao.objetos;
 
 import java.util.Scanner;
 
+import br.com.entra21.orientacao.objetos.principal.aula03.Atleta;
+import br.com.entra21.orientacao.objetos.principal.aula03.Nadador;
 import br.com.entra21.orientacao.objetos.principal.classes.Aluno;
 import br.com.entra21.orientacao.objetos.principal.classes.Professor;
 import br.com.entra21.orientacao.objetos.principal.heranca.Diretor;
@@ -9,100 +11,107 @@ import br.com.entra21.orientacao.objetos.principal.heranca.Funcionario;
 
 public class Main {
 
-	// o objeto da classe Scanner esta na variavel de entrada, então é um obj
-	// porem o System.in é uma chamada static pq
-	// para acessar o in do System nao precisei dar new
-	static Scanner input = new Scanner(System.in);
+	// o objeto da classe Scanner esta na variavel de entrada, então é um objeto
+		// porem o System.in é uma chamada static pq para acessar o in do System
+		static Scanner input = new Scanner(System.in);
 
-	public static void main(String[] args) {
-	byte option;
-	do {
-	System.out.println(" Escolha uma opção");
-	System.out.println("0- Sair ");
-	System.out.println("1- Classes");
-	System.out.println("2- Herança");
-	option = input.nextByte();
+		public static void main(String[] args) {
 
-	switch(option) {
-	case 0:
-	System.out.println("Saindo...");
-	break;
-	case 1:
-	aprenderClassesObjetos();
-	break;
-	case 2:
-	aprendendoHeranca();
-	break;
-	default:
-	break;
-	}
+			byte option;
 
-	}while(option!=0);
+			do {
+				System.out.println("\n\nEscolha uma opção: \n");
+				System.out.println("\t0 - Sair\n");
+				System.out.println("\t1 - Aprender Classes\n");
+				System.out.println("\t2 - Aprender Herança\n");
+				System.out.println("\t3 - Aprender Polimorfismo");
+				option = input.nextByte();
 
-	}
+				switch (option) {
 
-	 public static void aprenderClassesObjetos() {
+				case 0:
+					System.out.println("Saindo... Tchau :(");
+					break;
+				case 1:
+					aprenderClassesObjetos();
+					break;
+				case 2:
+					aprenderHeranca();
+					break;
 
-		 
-		 Funcionario funcionario1 = new Funcionario();
-		 Funcionario funcionario2 = new Funcionario("Cristian",(byte) 19, "Programador Jr", 1500.00f);
-		 
-		 Diretor diretor1 = new Diretor();
-		 diretor1.realizarApresentacao();
-		 
-		 Diretor diretor2 = new Diretor();
-		 diretor2.realizarApresentacao();
-		 
-		 Diretor diretor3 = new Diretor("Paulo",(byte) 80);
-		 diretor3.realizarApresentacao();
-		 
-	 Professor professorJava = new Professor();
+				default:
+					System.out.println("\nPor favor, insira uma opção válida :)");
+					break;
 
-	 Professor professoraIngles = new Professor("Isabelle", (byte) 30);
+				}
 
-	 System.out.println("Nome dela = " + professoraIngles.getNome());
+			} while (option != 0);
 
-	 professoraIngles.setNome("Isabelle 2");
+		}
 
-	 System.out.println("agora o nome dela = " + professoraIngles.getNome());
-	System.out.println("A idade dela é " + professoraIngles.getIdade());
+		public static void aprenderClassesObjetos() {
 
-	 System.out.println("Os professoes trabalham na " + Professor.instituicao);
+			Funcionario funcionario1 = new Funcionario();
+			funcionario1.setIdade((byte) 27);
+			funcionario1.setNome("Rafael");
+			funcionario1.setCargoAtual("Estagiário Dev. Java");
+			funcionario1.setSalario(1800.0f);
 
-	 Aluno alunoTeste = new Aluno();
+			System.out.println("Oi, tenho " + funcionario1.getIdade() + " anos, meu nome é " + funcionario1.getNome()
+					+ ", sou um " + funcionario1.getCargoAtual() + " e meu salario é " + funcionario1.getSalario());
+			
 
-	 Aluno outroAluno = new Aluno();
+			//// PARA TESTAR AS OUTRAS LINHAS DO CÓDIGO, BASTA TIRAR OS COMENTÁRIOS ====
+			//// CTRL+SHIFT+\
 
-	 Aluno alunoNovato = new Aluno();
+			Diretor diretor1 = new Diretor();
 
-	 Aluno alunoObjeto;
-	professorJava.setNome("oliota");
-	alunoObjeto = new Aluno();
+			Professor professorJava = new Professor();
+			Professor professoraIngles = new Professor("Isabelle", (byte) 30);
 
-	 alunoObjeto.idade = 18;
+			System.out.println("O nome dela = " + professoraIngles.getNome());
+			professoraIngles.setNome("Isabelle 2");
+			System.out.println("Agora o nome dela = " + professoraIngles.getNome());
+			System.out.println("A idade dela é " + professoraIngles.getIdade());
 
-	 alunoTeste.nome = "Rubem";
-	alunoTeste.idade = 33;
+			System.out.println("Os professores trabalham na " + Professor.instituicao);
 
-	 outroAluno.idade = 18;
-	outroAluno.nome = "Visitante";
-	alunoTeste.responderChamada();
-	alunoTeste.responderChamada();
-	alunoTeste.responderChamada();
-	alunoTeste.responderChamada();
+			Aluno alunoTeste = new Aluno();
 
-	 /*
-	* System.out.println("Qual o nome do aluno novato?");
-	* alunoNovato.nome=entrada.next();
-	*
-	* System.out.println("Qual a idade do "+alunoNovato.nome+"?");
-	* alunoNovato.idade=entrada.nextByte();
-	*
-	* System.out.println("Bem vindo "+alunoNovato.nome);
-	*/
+			alunoTeste.nome = "Rafael";
+			alunoTeste.idade = 27;
 
-	 }
-	public static void aprendendoHeranca() {
-	}
+			Aluno outroAluno = new Aluno();
 
-	}
+			outroAluno.idade = 18;
+			outroAluno.nome = "Visitante";
+
+			alunoTeste.responderChamada();
+			alunoTeste.responderChamada();
+
+			/*
+			 * System.out.println("Qual o nome do aluno novato? ");
+			 * alunoNovato.nome=entrada.next();
+			 * 
+			 * System.out.println("\nQual a idade do "+alunoNovato.nome+" ?");
+			 * alunoNovato.idade=entrada.nextByte();
+			 * 
+			 * System.out.println("\nBem vindo "+alunoNovato.nome);
+			 */
+
+		}
+
+		public static void aprenderHeranca() {
+
+		}
+		
+		public static void aprenderPolimorfismo() {
+			Atleta cr7 = new Atleta();
+			cr7.comemorarVitoria();
+			cr7.aprenderComDerrota();
+			Nadador jobson = new Nadador("Jobson", (byte) 23, 3, 2, "Praia", "Sunga");
+			jobson.comemorarVitoria();
+			jobson.aprenderComADerrota();
+			jobson.setName("Jobson Segundo");
+			}
+}

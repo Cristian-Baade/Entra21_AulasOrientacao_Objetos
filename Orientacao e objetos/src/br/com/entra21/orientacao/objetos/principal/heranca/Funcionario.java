@@ -1,25 +1,35 @@
 package br.com.entra21.orientacao.objetos.principal.heranca;
 
-public class Funcionario {
-	
-	private String nome;
-	private byte idade;
+public class Funcionario extends Pessoa {
+
 	private String cargoAtual;
 	private float salario;
-	
-	public Funcionario () {
-		
+
+	public Funcionario() {
+		super();
 	}
-	
-	public Funcionario (String nome, byte idade, String cargo, float valor) {
-		this.nome = nome;
-		this.idade = idade;
+
+	public Funcionario(String nome, byte idade, String cpf, String cargo, float valor) {
+		super(nome, idade, cpf);
 		this.cargoAtual = cargo;
 		this.salario = valor;
-		
-		
-		
-		
+
+	}
+
+	public String getCargoAtual() {
+		return cargoAtual;
+	}
+
+	public void setCargoAtual(String cargoAtual) {
+		this.cargoAtual = cargoAtual;
+	}
+
+	public float getSalario() {
+		return salario;
+	}
+
+	public void setSalario(float salario) {
+		this.salario = salario;
 	}
 
 }
