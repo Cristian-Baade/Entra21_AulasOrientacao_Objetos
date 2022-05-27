@@ -3,115 +3,200 @@ package br.com.entra21.orientacao.objetos;
 import java.util.Scanner;
 
 import br.com.entra21.orientacao.objetos.principal.aula03.Atleta;
+import br.com.entra21.orientacao.objetos.principal.aula03.Gamer;
 import br.com.entra21.orientacao.objetos.principal.aula03.Nadador;
+import br.com.entra21.orientacao.objetos.principal.aula03.Velocista;
+import br.com.entra21.orientacao.objetos.principal.aula04.Ponto;
+import br.com.entra21.orientacao.objetos.principal.aula04.Reta;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Aviao;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Capivara;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Gato;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Humano;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Planta;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Sagui;
 import br.com.entra21.orientacao.objetos.principal.classes.Aluno;
 import br.com.entra21.orientacao.objetos.principal.classes.Professor;
 import br.com.entra21.orientacao.objetos.principal.heranca.Diretor;
 import br.com.entra21.orientacao.objetos.principal.heranca.Funcionario;
+import br.com.entra21.orientacao.objetos.principal.heranca.Pessoa;
 
 public class Main {
 
-	// o objeto da classe Scanner esta na variavel de entrada, então é um objeto
-		// porem o System.in é uma chamada static pq para acessar o in do System
-		static Scanner input = new Scanner(System.in);
+	// o objeto da classe Scanner esta na variavel de entrada, então é um obj
+	// porem o System.in é uma chamada static pq
+	// para acessar o in do System nao precisei dar new
+	static Scanner entrada = new Scanner(System.in);
 
-		public static void main(String[] args) {
+	public static void main(String[] args) {
 
-			byte option;
+		byte opcao;
+		System.out.println("aprendendo sobre orientação a objetos");
 
-			do {
-				System.out.println("\n\nEscolha uma opção: \n");
-				System.out.println("\t0 - Sair\n");
-				System.out.println("\t1 - Aprender Classes\n");
-				System.out.println("\t2 - Aprender Herança\n");
-				System.out.println("\t3 - Aprender Polimorfismo");
-				option = input.nextByte();
+		do {
+			System.out.println("Escolha uma opção");
+			System.out.println("0 - Sair");
+			System.out.println("1 - Classes e objetos");
+			System.out.println("2 - Herança");
+			System.out.println("3 - Polimorfismo");
+			System.out.println("4 - Aprender conceitos POO");
+			System.out.println("5 - Aprender Polimorfismo com interface");
 
-				switch (option) {
+			opcao = entrada.nextByte();
 
-				case 0:
-					System.out.println("Saindo... Tchau :(");
-					break;
-				case 1:
-					aprenderClassesObjetos();
-					break;
-				case 2:
-					aprenderHeranca();
-					break;
+			switch (opcao) {
 
-				default:
-					System.out.println("\nPor favor, insira uma opção válida :)");
-					break;
+			case 0:
+				System.out.println("Saindo");
+				break;
+			case 1:
+				aprenderClasses();
+				break;
+			case 2:
+				aprenderHeranca();
+				break;
+			case 3:
+				aprenderPolimorfismo();
+				break;
+			case 4:
+				aprenderConceitosPOO();
+				break;
+			case 5:
+				aprenderPolimorfismoInterface();
+				break;
 
-				}
-
-			} while (option != 0);
-
-		}
-
-		public static void aprenderClassesObjetos() {
-
-			Funcionario funcionario1 = new Funcionario();
-			funcionario1.setIdade((byte) 27);
-			funcionario1.setNome("Rafael");
-			funcionario1.setCargoAtual("Estagiário Dev. Java");
-			funcionario1.setSalario(1800.0f);
-
-			System.out.println("Oi, tenho " + funcionario1.getIdade() + " anos, meu nome é " + funcionario1.getNome()
-					+ ", sou um " + funcionario1.getCargoAtual() + " e meu salario é " + funcionario1.getSalario());
-			
-
-			//// PARA TESTAR AS OUTRAS LINHAS DO CÓDIGO, BASTA TIRAR OS COMENTÁRIOS ====
-			//// CTRL+SHIFT+\
-
-			Diretor diretor1 = new Diretor();
-
-			Professor professorJava = new Professor();
-			Professor professoraIngles = new Professor("Isabelle", (byte) 30);
-
-			System.out.println("O nome dela = " + professoraIngles.getNome());
-			professoraIngles.setNome("Isabelle 2");
-			System.out.println("Agora o nome dela = " + professoraIngles.getNome());
-			System.out.println("A idade dela é " + professoraIngles.getIdade());
-
-			System.out.println("Os professores trabalham na " + Professor.instituicao);
-
-			Aluno alunoTeste = new Aluno();
-
-			alunoTeste.nome = "Rafael";
-			alunoTeste.idade = 27;
-
-			Aluno outroAluno = new Aluno();
-
-			outroAluno.idade = 18;
-			outroAluno.nome = "Visitante";
-
-			alunoTeste.responderChamada();
-			alunoTeste.responderChamada();
-
-			/*
-			 * System.out.println("Qual o nome do aluno novato? ");
-			 * alunoNovato.nome=entrada.next();
-			 * 
-			 * System.out.println("\nQual a idade do "+alunoNovato.nome+" ?");
-			 * alunoNovato.idade=entrada.nextByte();
-			 * 
-			 * System.out.println("\nBem vindo "+alunoNovato.nome);
-			 */
-
-		}
-
-		public static void aprenderHeranca() {
-
-		}
-		
-		public static void aprenderPolimorfismo() {
-			Atleta cr7 = new Atleta();
-			cr7.comemorarVitoria();
-			cr7.aprenderComDerrota();
-			Nadador jobson = new Nadador("Jobson", (byte) 23, 3, 2, "Praia", "Sunga");
-			jobson.comemorarVitoria();
-			jobson.aprenderComADerrota();
-			jobson.setName("Jobson Segundo");
+			default:
+				break;
 			}
+
+		} while (opcao != 0);
+
+	}
+
+	private static void aprenderClasses() {
+
+		// instanciando um objeto da classe Professor na variavel professorJava
+		Professor professorJava = new Professor();
+
+		// instanciando um objeto da classe Professor na variavel professoraIngles
+		Professor professoraIngles = new Professor("Isabelle", (byte) 30);
+
+		// Acessando os atributos com encapsulamento
+		System.out.println("Nome dela = " + professoraIngles.getNome());
+		professoraIngles.setNome("Isabelle 2");
+		System.out.println("agora o nome  dela = " + professoraIngles.getNome());
+		System.out.println("A idade dela é " + professoraIngles.getIdade());
+
+		// Acessando o atributo estático da Classe Professor, atributos estáticos ou
+		// metodos estatico não pertencem aos objetos da Classe
+		// dessa forma é possivel acessar em a necessidade de criar um objeto com new
+		System.out.println("Os professoes trabalham na " + Professor.instituicao);
+
+		// Criando varios objetos da classe Aluno nas variaveis
+		// cada variavel é independente e possui seus atributos e metodos
+		Aluno alunoTeste = new Aluno();
+		Aluno outroAluno = new Aluno();
+		Aluno alunoNovato = new Aluno();
+		Aluno alunoObjeto;
+		alunoObjeto = new Aluno();
+
+		// as alterações aqui só afetam esse objeto
+		alunoObjeto.idade = 18;
+
+		// as alterações aqui só afetam esse objeto
+		alunoTeste.nome = "Rubem";
+		alunoTeste.idade = 33;
+
+		// as alterações aqui só afetam esse objeto
+		outroAluno.idade = 18;
+		outroAluno.nome = "Visitante";
+
+		// Executando varias vezes o metodo desse objeto
+		alunoTeste.responderChamada();
+		alunoTeste.responderChamada();
+		alunoTeste.responderChamada();
+		alunoTeste.responderChamada();
+
+		// Interagindo com o usuario para preencher os atributos do Aluno que ainda não
+		// tem encapsulamento
+		System.out.println("Qual o nome do aluno novato?");
+		alunoNovato.nome = entrada.next();
+
+		System.out.println("Qual a idade do " + alunoNovato.nome + "?");
+		alunoNovato.idade = entrada.nextByte();
+
+		System.out.println("Bem vindo " + alunoNovato.nome);
+
+	}
+
+	private static void aprenderHeranca() {
+		Pessoa pessoa1 = new Pessoa();
+
+		Diretor diretor1 = new Diretor("Paulo", (byte) 80, "08938491212", "Entra21", (byte) 10);
+		diretor1.setNome("Paulo");
+
+		Funcionario funcionario1 = new Funcionario();
+		funcionario1.setIdade((byte) 22);
+		funcionario1.setObservacao("novato");
+
+		Funcionario funcionario2 = new Funcionario("Fulano", (byte) 18, "07821199901", "Junin", 4000.05f);
+		funcionario2.getCpf();
+
+	}
+
+	private static void aprenderPolimorfismo() {
+		Atleta atleta = new Atleta();
+		Gamer gamer = new Gamer();
+		Velocista velocista = new Velocista();
+		Nadador nadador = new Nadador();
+
+		atleta.agradecerVitoria();
+		System.out.println("---------------");
+		gamer.agradecerVitoria();
+		System.out.println("---------------");
+		velocista.agradecerVitoria();
+		System.out.println("---------------");
+		nadador.agradecerVitoria();
+
+	}
+
+	private static void aprenderConceitosPOO() {
+		// A classe ponto tem alta COESÃO pos é preciso nas suas responsabilidades
+		Ponto pontoAlto = new Ponto(30, 10000);
+		Ponto esquerdaBaixo = new Ponto(-50, -500);
+		// A classe reta é AGREGADA por pontos que podem não estar inicializados.
+		// A asociação de reta e ponto e de um para muitos respectivamente
+		Reta torta = new Reta();
+		Reta retaDiagonal = new Reta(pontoAlto, esquerdaBaixo);
+
+	}
+
+	private static void aprenderPolimorfismoInterface() {
+
+		Humano pessoa= new Humano();
+		pessoa.setNome("Fulano");
+		pessoa.alimentar("macarrão");
+		pessoa.alimentar("arroz");
+		pessoa.comunicar("Boa noite, interface é muito fácil");
+		pessoa.locomover();
+
+		 Gato vezu= new Gato();
+		vezu.alimentar("peixe");
+		vezu.alimentar("ração");
+		vezu.comunicar("Será que existem gatos programadores?");
+		vezu.locomover();
+
+		Sagui jubileu= new Sagui();
+		jubileu.alimentar("Fruta");
+		jubileu.alimentar("Banana");
+		jubileu.comunicar("Grita loucamente");
+		jubileu.locomover();
+		
+		Aviao comercial= new Aviao();
+		comercial.setModelo("Boeing 737");
+		System.out.println(comercial.freiar());
+		comercial.acelerar(870.5f);
+		System.out.println(comercial.getVelocidadeAtual());
+		
+	}
+
 }

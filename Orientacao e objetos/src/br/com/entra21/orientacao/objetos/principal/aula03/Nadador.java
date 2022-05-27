@@ -1,31 +1,23 @@
 package br.com.entra21.orientacao.objetos.principal.aula03;
 
-public class Nadador {
-
+public class Nadador extends Atleta {
 	
-	private String ambienteAquatico;
-	private String equipamentoAquatico;
-	
+	private String modalidade;
 	public Nadador() {
-
-
+		
+	}
+	public Nadador(String modalidade) {
+		super();
+		this.modalidade = modalidade;
 	}
 
-	
-	public String getAmbienteAquatico() {
-		return ambienteAquatico;
+	public String getModalidade() {
+		return modalidade;
 	}
 
-	public void setAmbienteAquatico(String ambienteAquatico) {
-		this.ambienteAquatico = ambienteAquatico;
+	public void setModalidade(String modalidade) {
+		this.modalidade = modalidade;
 	}
+	 
 
-	public String getEquipamentoAquatico() {
-		return equipamentoAquatico;
-	}
-
-	public void setEquipamentoAquatico(String equipamentoAquatico) {
-		this.equipamentoAquatico = equipamentoAquatico;
-	}
-	
 }

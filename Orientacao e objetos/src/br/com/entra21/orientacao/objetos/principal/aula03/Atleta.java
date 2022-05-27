@@ -1,60 +1,65 @@
 package br.com.entra21.orientacao.objetos.principal.aula03;
 
 public class Atleta {
-	private String name;
-	private byte age;
-	private int qtdWin;
-	private int qtdLoss;
-
-	 
-
+	
+	private String nome;
+	private byte idade;
+	private int quantidadeVitorias;
+	private int quantidadeDerrotas; 
+	
 	public Atleta() {
-	    
+		super();
 	}
-	public Atleta(String name, byte age, int qtdWin, int qtdLoss) {
-	    super();
-	    this.name = name;
-	    this.age = age;
-	    this.qtdWin = qtdWin;
-	    this.qtdLoss = qtdLoss;
-	}
-	public String getName() {
-	    return name;
-	}
-	public void setName(String name) {
-	    this.name = name;
-	}
-	public byte getAge() {
-	    return age;
-	}
-	public void setAge(byte age) {
-	    this.age = age;
-	}
-	public int getQtdWin() {
-	    return qtdWin;
-	}
-	public void setQtdWin(int qtdWin) {
-	    this.qtdWin = qtdWin;
-	}
-	public int getQtdLoss() {
-	    return qtdLoss;
-	}
-	public void setQtdLoss(int qtdLoss) {
-	    this.qtdLoss = qtdLoss;
-	} 
-	public void comemorarVitoria(){
 
-	 
-
-	    System.out.println("Thanks God!!");
-	    this.qtdWin++;
-	    
+	public Atleta(String nome, byte idade, short quantidadeVitorias, byte quantidadeDerrotas ) {
+		super();
+		this.nome = nome;
+		this.idade = idade;
+		this.quantidadeVitorias = quantidadeVitorias;
+		this.quantidadeDerrotas = quantidadeDerrotas; 
 	}
-	public void aprenderComDerrota() {
 
-	 
-
-	    System.out.println(" Vou melhorar na proxima vez");
-	    this.qtdLoss++;
-	    }
+	public String getNome() {
+		return nome;
 	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public byte getIdade() {
+		return idade;
+	}
+
+	public void setIdade(byte idade) {
+		this.idade = idade;
+	}
+
+	public int getQuantidadeVitorias() {
+		return quantidadeVitorias;
+	}
+
+	public void setQuantidadeVitorias(int quantidadeVitorias) {
+		this.quantidadeVitorias = quantidadeVitorias;
+	}
+
+	public int getQuantidadeDerrotas() {
+		return quantidadeDerrotas;
+	}
+
+	public void setQuantidadeDerrotas(int quantidadeDerrotas) {
+		this.quantidadeDerrotas = quantidadeDerrotas;
+	}
+	
+	public void agradecerVitoria() {
+		setQuantidadeVitorias(getQuantidadeVitorias()+1);
+		System.out.println("Obrigado meu DEUS!!!");
+	}
+ 
+ 
+	
+	
+	
+	
+
+}

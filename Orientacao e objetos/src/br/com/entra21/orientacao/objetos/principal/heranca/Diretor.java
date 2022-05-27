@@ -1,40 +1,91 @@
 package br.com.entra21.orientacao.objetos.principal.heranca;
 
-public class Diretor extends Pessoa {
+public class Diretor extends Pessoa{
 
+	//removi os atributos comuns
+	//private String nome;//
+	//private byte idade;//
+	//private String cpf;//
+	
+	//mantive os especificos
 	private String cursoAtual;
-	private byte qtdProfessores;
-
-	public Diretor() {
+	private byte quantidadeProfessores;
+	
+	
+	public Diretor() { 
 		super();
-
 	}
+	
+	
 
-	public Diretor(String nome, byte idade, String cpf) {
+
+
+	public Diretor(String nome, byte idade, String cpf,String cursoAtual,byte quantidadeProfessores) {
 		super(nome, idade, cpf);
-		this.cursoAtual = cursoAtual;
-		this.qtdProfessores = qtdProfessores;
+		setNome(nome);
+		setIdade(idade);
+		this.cursoAtual=cursoAtual;
+		this.quantidadeProfessores=quantidadeProfessores;
 	}
+
+
+
+
+	//removi os metodos comuns
+	/*
+	 * public String getNome() { return nome; }
+	 * 
+	 * 
+	 * public void setNome(String nome) { this.nome = nome; }
+	 * 
+	 * 
+	 * public byte getIdade() { return idade; }
+	 * 
+	 * 
+	 * public void setIdade(byte idade) { this.idade = idade; }
+	 * 
+	 * 
+	 * public String getCpf() { return cpf; }
+	 * 
+	 * 
+	 * public void setCpf(String cpf) { this.cpf = cpf; }
+	 */
+
+	
+
+
+
+
+
+
+
+
+
 
 	public String getCursoAtual() {
 		return cursoAtual;
 	}
 
+
 	public void setCursoAtual(String cursoAtual) {
 		this.cursoAtual = cursoAtual;
 	}
 
-	public byte getQtdProfessores() {
-		return qtdProfessores;
+
+	public byte getQuantidadeProfessores() {
+		return quantidadeProfessores;
 	}
 
-	public void setQtdProfessores(byte qtdProfessores) {
-		this.qtdProfessores = qtdProfessores;
-	}
 
-	public void realizarApresentacao() {
-		// TODO Auto-generated method stub
-		
+	public void setQuantidadeProfessores(byte quantidadeProfessores) {
+		this.quantidadeProfessores = quantidadeProfessores;
 	}
-
+	
+	public void realizarParesentacao() {
+		System.out.println("Oi meu nome é "+getNome()+" tenho "+getIdade());
+	}
+	
+	
+	
+	
 }

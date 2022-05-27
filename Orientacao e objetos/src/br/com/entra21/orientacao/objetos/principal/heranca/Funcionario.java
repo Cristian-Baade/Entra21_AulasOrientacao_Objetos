@@ -1,20 +1,21 @@
 package br.com.entra21.orientacao.objetos.principal.heranca;
 
 public class Funcionario extends Pessoa {
+	
 
 	private String cargoAtual;
-	private float salario;
-
-	public Funcionario() {
-		super();
+    private float salario;
+    
+	public Funcionario() { 
 	}
 
-	public Funcionario(String nome, byte idade, String cpf, String cargo, float valor) {
+	public Funcionario(String nome, byte idade,String cpf, String cargoAtual, float salario) { 
 		super(nome, idade, cpf);
-		this.cargoAtual = cargo;
-		this.salario = valor;
-
+		this.cargoAtual = cargoAtual;
+		this.salario = salario;
 	}
+
+
 
 	public String getCargoAtual() {
 		return cargoAtual;
@@ -31,5 +32,9 @@ public class Funcionario extends Pessoa {
 	public void setSalario(float salario) {
 		this.salario = salario;
 	}
+	
+	
+    
+    
 
 }
