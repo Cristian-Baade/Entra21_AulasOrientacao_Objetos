@@ -1,6 +1,6 @@
 package br.com.entra21.orientacao.objetos.principal.aula04.interfaces;
 
-import br.com.entra21.orientacao.objetos.principal.heranca.Pessoa;
+import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Pessoa;
 
 public class Gato implements Individuo {
 

@@ -1,4 +1,4 @@
-package br.com.entra21.orientacao.objetos.principal.heranca;
+package br.com.entra21.orientacao.objetos.principal.aula02.heranca;
 
 public class Diretor extends Pessoa{
 

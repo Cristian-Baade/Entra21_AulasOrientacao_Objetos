@@ -2,6 +2,11 @@ package br.com.entra21.orientacao.objetos;
 
 import java.util.Scanner;
 
+import br.com.entra21.orientacao.objetos.principal.aula01.classes.Aluno;
+import br.com.entra21.orientacao.objetos.principal.aula01.classes.Professor;
+import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Diretor;
+import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Funcionario;
+import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Pessoa;
 import br.com.entra21.orientacao.objetos.principal.aula03.Atleta;
 import br.com.entra21.orientacao.objetos.principal.aula03.Gamer;
 import br.com.entra21.orientacao.objetos.principal.aula03.Nadador;
@@ -14,11 +19,6 @@ import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Gato;
 import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Humano;
 import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Planta;
 import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Sagui;
-import br.com.entra21.orientacao.objetos.principal.classes.Aluno;
-import br.com.entra21.orientacao.objetos.principal.classes.Professor;
-import br.com.entra21.orientacao.objetos.principal.heranca.Diretor;
-import br.com.entra21.orientacao.objetos.principal.heranca.Funcionario;
-import br.com.entra21.orientacao.objetos.principal.heranca.Pessoa;
 
 public class Main {
 
