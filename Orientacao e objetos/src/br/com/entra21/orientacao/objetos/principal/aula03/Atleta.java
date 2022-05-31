@@ -1,22 +1,22 @@
 package br.com.entra21.orientacao.objetos.principal.aula03;
 
 public class Atleta {
-	
+
 	private String nome;
 	private byte idade;
 	private int quantidadeVitorias;
-	private int quantidadeDerrotas; 
-	
+	private int quantidadeDerrotas;
+
 	public Atleta() {
-		super();
+
 	}
 
-	public Atleta(String nome, byte idade, short quantidadeVitorias, byte quantidadeDerrotas ) {
+	public Atleta(String nome, byte age, int qtdWin, int qtdLoss) {
 		super();
 		this.nome = nome;
 		this.idade = idade;
-		this.quantidadeVitorias = quantidadeVitorias;
-		this.quantidadeDerrotas = quantidadeDerrotas; 
+		this.quantidadeVitorias = qtdWin;
+		this.quantidadeDerrotas = qtdLoss;
 	}
 
 	public String getNome() {
@@ -27,39 +27,38 @@ public class Atleta {
 		this.nome = nome;
 	}
 
-	public byte getIdade() {
+	public byte getAge() {
 		return idade;
 	}
 
-	public void setIdade(byte idade) {
+	public void setAge(byte age) {
 		this.idade = idade;
 	}
 
-	public int getQuantidadeVitorias() {
+	public int getQtdWin() {
 		return quantidadeVitorias;
 	}
 
-	public void setQuantidadeVitorias(int quantidadeVitorias) {
-		this.quantidadeVitorias = quantidadeVitorias;
+	public void setQtdWin(int qtdWin) {
+		this.quantidadeVitorias = qtdWin;
 	}
 
-	public int getQuantidadeDerrotas() {
+	public int getQtdLoss() {
 		return quantidadeDerrotas;
 	}
 
-	public void setQuantidadeDerrotas(int quantidadeDerrotas) {
-		this.quantidadeDerrotas = quantidadeDerrotas;
+	public void setQtdLoss(int qtdLoss) {
+		this.quantidadeDerrotas = qtdLoss;
 	}
-	
-	public void agradecerVitoria() {
-		setQuantidadeVitorias(getQuantidadeVitorias()+1);
-		System.out.println("Obrigado meu DEUS!!!");
+
+	public void comemorarVitoria() {
+		System.out.println("Obrigado Deus pela vitória!");
+		this.quantidadeVitorias++;
 	}
- 
- 
-	
-	
-	
-	
+
+	public void aprenderComDerrota() {
+		System.out.println("Vou melhorar na proxima vez");
+		this.quantidadeDerrotas++;
+	}
 
 }

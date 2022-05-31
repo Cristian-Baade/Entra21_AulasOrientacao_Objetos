@@ -19,6 +19,7 @@ import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Gato;
 import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Humano;
 import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Planta;
 import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Sagui;
+import br.com.entra21.orientacao.objetos.principal.aula05.Revisao.Revisao;
 
 public class Main {
 
@@ -40,7 +41,7 @@ public class Main {
 			System.out.println("3 - Polimorfismo");
 			System.out.println("4 - Aprender conceitos POO");
 			System.out.println("5 - Aprender Polimorfismo com interface");
-
+			System.out.println("6 - Revisão");
 			opcao = entrada.nextByte();
 
 			switch (opcao) {
@@ -63,7 +64,9 @@ public class Main {
 			case 5:
 				aprenderPolimorfismoInterface();
 				break;
-
+			case 6:
+				revisarPOO();
+				break;
 			default:
 				break;
 			}
@@ -144,19 +147,28 @@ public class Main {
 	}
 
 	private static void aprenderPolimorfismo() {
-		Atleta atleta = new Atleta();
-		Gamer gamer = new Gamer();
-		Velocista velocista = new Velocista();
-		Nadador nadador = new Nadador();
+		Atleta cr7 = new Atleta();
+		cr7.comemorarVitoria();
+		cr7.aprenderComDerrota();
 
-		atleta.agradecerVitoria();
-		System.out.println("---------------");
-		gamer.agradecerVitoria();
-		System.out.println("---------------");
-		velocista.agradecerVitoria();
-		System.out.println("---------------");
-		nadador.agradecerVitoria();
+		System.out.println("----------------------------");
+		
+		Nadador michaelPhelps = new Nadador();
+		michaelPhelps.setNome("Michael Phelps");
+		Nadador sergioMichael = new Nadador("Sérgio Michael", (byte) 39, 23, 40, "Piscína", "Sunga e Touca");
+		sergioMichael.comemorarVitoria(); // procura primeiro na minha classe Nadador, como o método com polimorfismo não foi acionado com o envio de uma frase, usara o metodo da herança.
+		michaelPhelps.comemorarVitoria(); // procura primeiro na minha classe Nadador, como o método com polimorfismo não foi acionado com o envio de uma frase, usara o metodo da herança.
+		
+		sergioMichael.agradecerVitoria(" Foi árduo, mas consegui!"); // Enviando uma frase, acessar o metodo com polimorfismo na classe Nadador e apresenta a frase enviada.
+		sergioMichael.agradecerVitoria(""); // Enviando frase vazia, acessar o metodo com polimorfismo na classe Nadador e apresenta a frase redundante
+		
+		System.out.println("----------------------------");
 
+		Velocista usainBolt = new Velocista();
+		usainBolt.setNome("Usain Bolt");
+		usainBolt.comemorarVitoria();
+
+		System.out.println("----------------------------");
 	}
 
 	private static void aprenderConceitosPOO() {
@@ -168,35 +180,41 @@ public class Main {
 		Reta torta = new Reta();
 		Reta retaDiagonal = new Reta(pontoAlto, esquerdaBaixo);
 
+		System.out.println(
+				"O ponto representado em esquerdaBaixo tem a corrdenada X em: " + esquerdaBaixo.getCoordenadaX());
+
 	}
 
 	private static void aprenderPolimorfismoInterface() {
 
-		Humano pessoa= new Humano();
+		Humano pessoa = new Humano();
 		pessoa.setNome("Fulano");
 		pessoa.alimentar("macarrão");
 		pessoa.alimentar("arroz");
 		pessoa.comunicar("Boa noite, interface é muito fácil");
 		pessoa.locomover();
 
-		 Gato vezu= new Gato();
+		Gato vezu = new Gato();
 		vezu.alimentar("peixe");
 		vezu.alimentar("ração");
 		vezu.comunicar("Será que existem gatos programadores?");
 		vezu.locomover();
 
-		Sagui jubileu= new Sagui();
+		Sagui jubileu = new Sagui();
 		jubileu.alimentar("Fruta");
 		jubileu.alimentar("Banana");
 		jubileu.comunicar("Grita loucamente");
 		jubileu.locomover();
-		
-		Aviao comercial= new Aviao();
+
+		Aviao comercial = new Aviao();
 		comercial.setModelo("Boeing 737");
 		System.out.println(comercial.freiar());
 		comercial.acelerar(870.5f);
 		System.out.println(comercial.getVelocidadeAtual());
-		
+
 	}
 
+	private static void revisarPOO() {
+		Revisao.revisar();
+	}
 }

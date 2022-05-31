@@ -40,7 +40,7 @@ public class Revisao {
 
 	private static void gerarDados() {
 
-		oliota = new Professor("Oliota", "123.456.789-00", (byte) 33);
+		oliota = new Professor("Oliota", (byte) 33, "123.456.789-00");
 
 	}
 

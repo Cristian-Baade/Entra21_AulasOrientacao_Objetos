@@ -2,36 +2,40 @@ package br.com.entra21.orientacao.objetos.principal.aula03;
 
 public class Velocista extends Atleta {
 
-	private String marcaDeCalcado;
-	private float distanciaPadrao;
-	
+	private String tipoPista;
+	private String marcaCalcado;
+
 	public Velocista() {
-		
-	}
-	public Velocista(String marcaDeCalcado, float distanciaPadrao) {
 		super();
-		this.marcaDeCalcado = marcaDeCalcado;
-		this.distanciaPadrao = distanciaPadrao;
 	}
-	public String getMarcaDeCalcado() {
-		return marcaDeCalcado;
+
+	public Velocista(String tipoPista, String marcaCalcado) {
+		super();
+		this.tipoPista = tipoPista;
+		this.marcaCalcado = marcaCalcado;
 	}
-	public void setMarcaDeCalcado(String marcaDeCalcado) {
-		this.marcaDeCalcado = marcaDeCalcado;
+
+	public String getTipoPista() {
+		return tipoPista;
 	}
-	public float getDistanciaPadrao() {
-		return distanciaPadrao;
+
+	public void setTipoPista(String tipoPista) {
+		this.tipoPista = tipoPista;
 	}
-	public void setDistanciaPadrao(float distanciaPadrao) {
-		this.distanciaPadrao = distanciaPadrao;
+
+	public String getMarcaCalcado() {
+		return marcaCalcado;
 	}
+
+	public void setMarcaCalcado(String marcaCalcado) {
+		this.marcaCalcado = marcaCalcado;
+	}
+
 	@Override
-	public void agradecerVitoria() {
-		// TODO Auto-generated method stub
-		super.agradecerVitoria();
-		System.out.println("Ufa estou cansado, mas consegui");
+	public void comemorarVitoria() {
+		super.comemorarVitoria();
+
+		System.out.println(getNome() + " aaaaa estou cansado mais corri para vitória. (frases inspiradoras)");
 	}
-	
-	
-	
+
 }
